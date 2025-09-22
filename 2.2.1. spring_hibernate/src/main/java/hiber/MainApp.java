@@ -31,17 +31,17 @@ public class MainApp {
       fred.setCar(bmw);
       alex.setCar(toyota);
 
-      userService.add(ivan);
-      userService.add(piter);
-      userService.add(fred);
-      userService.add(alex);
+      userService.add(ivan, ivan.getCar());
+      userService.add(piter, piter.getCar());
+      userService.add(fred, fred.getCar());
+      userService.add(alex, alex.getCar());
 
       List<User> users = userService.listUsers();
       for (User user : users) {
          System.out.println(user + " "+ user.getCar());
       }
 
-      System.out.println(userService.getUserByCar("toyota", 48));
+      System.out.println(userService.userByCar("toyota", 48));
 
       context.close();
    }
